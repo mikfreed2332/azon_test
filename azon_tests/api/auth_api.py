@@ -7,6 +7,7 @@ class AuthAPI(CustomRequester):
 
     REGISTER_ENDPOINT = "/api/v1/auth/register"
     LOGIN_ENDPOINT = "/api/v1/auth/login"
+    
 
 
     def __init__(self, session):

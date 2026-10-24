@@ -41,4 +41,3 @@ class CustomRequester:
             response.text[:500],
         )
 
-
