@@ -1,6 +1,12 @@
-.venv/
-__pycache__/
-*.pyc
 .idea/
-.pytest_cache/
-*.iml
+.vscode/
+.venv/
+.DS_Store
+/venv/
+__pycache__/
+*.db
+*.xlsx
+*.log
+*.csv
+*.env
+.env
