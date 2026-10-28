@@ -1,10 +1,9 @@
 import logging
-import json
-
 
 DEFAULT_TIMEOUT = 10
 
 logger = logging.getLogger("azon_test")
+
 
 class CustomRequester:
     def __init__(self, session, base_url):
@@ -28,7 +27,6 @@ class CustomRequester:
     def _update_session_headers(self, **headers):
         self.session.headers.update(headers)
 
-
     def _log_request_and_response(self, response):
         request = response.request
         logger.info("--> %s %s", request.method, request.url)
@@ -40,4 +38,3 @@ class CustomRequester:
             response.elapsed.total_seconds(),
             response.text[:500],
         )
-

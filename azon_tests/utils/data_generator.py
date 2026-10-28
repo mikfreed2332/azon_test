@@ -4,6 +4,7 @@ from faker import Faker
 
 fake = Faker("en_US")
 
+
 class DataGenerator:
 
     @staticmethod
@@ -17,5 +18,3 @@ class DataGenerator:
     @staticmethod
     def generate_full_name():
         return fake.name()
-
-

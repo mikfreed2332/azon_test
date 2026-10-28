@@ -21,7 +21,7 @@ class TestAuth:
         response = api_manager.auth_api.register_user(user_data, expected_status=409)
         assert response.json()["error"]["code"] == "EMAIL_EXISTS"
 
-    def test_login_with_wrong_password(self,api_manager, registered_user):
+    def test_login_with_wrong_password(self, api_manager, registered_user):
         credentials = UserData.login_data(registered_user)
         credentials["password"] = "definitely-worng-password"
 
