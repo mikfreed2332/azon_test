@@ -5,7 +5,7 @@ class UserData:
 
     @staticmethod
     def registration_data(invite_code: str = None) -> dict:
-        data =  {
+        data = {
             "email": DataGenerator.generate_email(),
             "password": DataGenerator.generate_password(),
             "full_name": DataGenerator.generate_full_name(),
@@ -13,7 +13,6 @@ class UserData:
         if invite_code:
             data["invite_code"] = invite_code
         return data
-
 
     @staticmethod
     def login_data(user_data) -> dict:

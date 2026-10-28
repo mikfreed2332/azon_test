@@ -1,10 +1,8 @@
-
 from config.hosts import PRODUCT_URL
 from requester.custom_requester import CustomRequester
 
 
 class ProductsAPI(CustomRequester):
-
     PRODUCT_ENDPOINT = "/api/v1/products"
 
     def __init__(self, session):
@@ -13,28 +11,33 @@ class ProductsAPI(CustomRequester):
     def get_products(self, params=None, expected_status=200):
         return self.send_request(
             "GET", self.PRODUCT_ENDPOINT, params=params,
-expected_status=expected_status
+            expected_status=expected_status
         )
+
     def get_product(self, product_id, expected_status=200):
         return self.send_request(
             "GET", f"{self.PRODUCT_ENDPOINT}/{product_id}",
             expected_status=expected_status
         )
-    def create_product(self, product_data, expected_status =201):
+
+    def create_product(self, product_data, expected_status=201):
         return self.send_request("POST", f"{self.PRODUCT_ENDPOINT}", json=product_data,
-        expected_status=expected_status,
-        )
-    def update_product(self, product_id, product_data, expected_status =200):
+                                 expected_status=expected_status,
+                                 )
+
+    def update_product(self, product_id, product_data, expected_status=200):
         return self.send_request(
             "PATCH", f"{self.PRODUCT_ENDPOINT}/{product_id}", json=product_data,
-        expected_status=expected_status
+            expected_status=expected_status
         )
-    def update_price(self, product_id, price_data, expected_status =200):
+
+    def update_price(self, product_id, price_data, expected_status=200):
         return self.send_request(
             "PATCH", f"{self.PRODUCT_ENDPOINT}/{product_id}/price", json=price_data,
             expected_status=expected_status
         )
-    def delete_product(self, product_id, expected_status =204):
+
+    def delete_product(self, product_id, expected_status=204):
         return self.send_request(
             "DELETE", f"{self.PRODUCT_ENDPOINT}/{product_id}", expected_status=expected_status
         )

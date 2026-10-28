@@ -3,12 +3,8 @@ from requester.custom_requester import CustomRequester
 
 
 class AuthAPI(CustomRequester):
-
-
     REGISTER_ENDPOINT = "/api/v1/auth/register"
     LOGIN_ENDPOINT = "/api/v1/auth/login"
-    
-
 
     def __init__(self, session):
         super().__init__(session, base_url=AUTH_URL)
@@ -23,7 +19,7 @@ class AuthAPI(CustomRequester):
             "POST", self.LOGIN_ENDPOINT, json=credentials, expected_status=expected_status
         )
 
-    def authenticate(self,user_creds):
+    def authenticate(self, user_creds):
         email, password = user_creds
         response = self.login_user({"email": email, "password": password})
         token = response.json()["access_token"]
