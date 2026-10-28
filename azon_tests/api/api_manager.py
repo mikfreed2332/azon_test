@@ -13,6 +13,3 @@ class ApiManager:
         self.user_api = UserAPI(session)
         self.products_api = ProductsAPI(session)
         self.payment_api = PaymentAPI(session)
-
-
-
